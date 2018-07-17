@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/header %>
+</head>
+<body class="container">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Student</td>
+          <% for (let repo of data[0].repos) { %>
+              <td>
+                <%= repo.name.substring(repo.name.lastIndexOf('-'), 0) %>
+              </td>
+            <% }; %>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let user of data) { %>
+          <tr>
+            <td><%= user.login %></td>
+            <% for (let repo of user.repos) { %>
+              <td>
+                <img src="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>.svg?branch=master"><br/>
+                <small><a href="<%= repo.url %>"><%= repo.name %></a></small>
+              </td>
+            <% }; %>
+          </tr>
+        <% }; %>
+      </tbody>
+    </table>
+  </div>
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

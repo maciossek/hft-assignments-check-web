@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/local/Cellar/node/9.11.1/bin/node /Users/mathiasmaciossek/.yarn/bin/yarn.js add express ejs graphql passport passport-github
+
+PATH: 
+  /Users/mathiasmaciossek/Development/03_SDKs/google-cloud-sdk/bin:/Users/mathiasmaciossek/.yarn/bin:/Users/mathiasmaciossek/Library/Android/sdk/tools:/Users/mathiasmaciossek/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  9.11.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: connect EHOSTDOWN 104.18.96.96:443 - Local (0.0.0.0:0)
+      at internalConnect (net.js:940:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:281:19)
+      at emitLookup (net.js:1093:9)
+      at /Users/mathiasmaciossek/.yarn/lib/cli.js:101917:29
+      at /Users/mathiasmaciossek/.yarn/lib/cli.js:101763:25
+      at RawTask.module.exports.RawTask.call (/Users/mathiasmaciossek/.yarn/lib/cli.js:82906:19)
+      at flush (/Users/mathiasmaciossek/.yarn/lib/cli.js:82988:29)
+      at process._tickCallback (internal/process/next_tick.js:176:11)
+
+npm manifest: 
+  {
+    "name": "hft-assignments-check-web",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Mathias Maciossek <mathias.maciossek@threethink.io>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

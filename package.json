@@ -1,0 +1,25 @@
+{
+  "name": "hft-assignments-check-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -- --experimental-modules --inspect index.js"
+  },
+  "author": "Mathias Maciossek <mathias.maciossek@threethink.io>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-fetch": "^0.7.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.15.6",
+    "lodash": "^4.17.10",
+    "method-override": "^2.3.10",
+    "normalizr": "^3.2.4",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0"
+  }
+}
