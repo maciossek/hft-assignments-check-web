@@ -6,7 +6,11 @@
   "scripts": {
     "start": "nodemon -- --experimental-modules --inspect index.js"
   },
-  "author": "Mathias Maciossek <mathias.maciossek@threethink.io>",
+  "author": "Mathias Maciossek <mathias@threethink.io>",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/maciossek/hft-assignments-check-web.git"
+  },
   "license": "MIT",
   "dependencies": {
     "apollo-fetch": "^0.7.0",
