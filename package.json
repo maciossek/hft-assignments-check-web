@@ -8,8 +8,8 @@
   },
   "author": "Mathias Maciossek <mathias@threethink.io>",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/maciossek/hft-assignments-check-web.git"
+    "type": "git",
+    "url": "https://github.com/maciossek/hft-assignments-check-web.git"
   },
   "license": "MIT",
   "dependencies": {

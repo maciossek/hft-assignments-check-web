@@ -30,16 +30,16 @@ function normalizeRepos(originalData) {
   let users = []
   let userAssignments = []
 
-  const dataWithoutMe = originalData.filter(item => item.node.name.indexOf(TEACHER_ID) === -1)
+  const dataWithoutMe = originalData
 
   dataWithoutMe.forEach((item => {
     repoName = item.node.name
 
-    const user = item.node.collaborators.nodes.filter(u => u.login !== 'maciossek')
+    const user = item.node.collaborators.nodes
     const userAssignment = [{
       name: item.node.name,
       url: item.node.url,
-      user: user[0].login
+      user: typeof user[1] !== 'undefined' ? user[1].login : user[0].login
     }]
     
     users = unionBy(users, user, 'login')
@@ -49,6 +49,7 @@ function normalizeRepos(originalData) {
   users.forEach((item => {
     item.repos = []
     userAssignments.forEach(ua => {
+      // console.log(ua.user === item.login, ua.user === item.login)
       if (ua.user === item.login) {
         item.repos.push(ua)
       }
