@@ -10,8 +10,8 @@ const GitHubStrategy = require('passport-github').Strategy;
 const indexController = require('./components/index/index.controller')
 const cookieParser = require('cookie-parser');
 
-const GITHUB_CLIENT_ID = "90f1bc9593612b391339";
-const GITHUB_CLIENT_SECRET = "f5778b0a24ba9db1be24483ace357da764e99592";
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 passport.serializeUser(function(user, done) {
   done(null, user);
