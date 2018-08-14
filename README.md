@@ -7,10 +7,12 @@ Basically just `npm start` but you need to set two env vars:
 `CLASSROOM_ORG_NAME` and `TEACHER_ID`.
 
 
-| env var              | value type  | Description     |        
-| -------------------- | ----------- | --------------- | 
-| CLASSROOM\_ORG\_NAME | string      | GitHub org-name |
-| TEACHER\_ID          | string      | GitHub Username |
+| env var                | value type  | Description          |        
+| ---------------------- | ----------- | -------------------- | 
+| CLASSROOM\_ORG\_NAME   | string      | GitHub org-name      |
+| TEACHER\_ID            | string      | GitHub Username      |
+| GITHUB\_CLIENT\_SECRET | string      | GitHub Client Secret |
+| GITHUB\_CLIENT\_ID     | string      | GitHub Client Id     |
 
 ## Description
 This repo is for checking the assignments from a Github Classroom-Org against their travis-ci build.
