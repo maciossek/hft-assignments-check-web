@@ -27,9 +27,9 @@ passport.use(new GitHubStrategy({
   callbackURL: "http://localhost:3000/auth/github/callback"
 },
 function(accessToken, refreshToken, profile, done) {
-//   console.log('Profile:', profile)
-//   console.log('AccessToken:',accessToken)
-//   console.log('RefreshToken:',refreshToken)
+  // console.log('Profile:', profile)
+  // console.log('AccessToken:',accessToken)
+  // console.log('RefreshToken:',refreshToken)
   // asynchronous verification, for effect...
   process.nextTick(function () {
     

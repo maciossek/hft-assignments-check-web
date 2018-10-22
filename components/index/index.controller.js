@@ -20,10 +20,16 @@ async function indexController(req, res) {
     next();
   });
 
-  const repos = await fetchAllRepos(apolloFetch)
-  const normalizedJson = normalizeRepos(repos)
+  let repos = []
 
-  res.render('index/index', { CLASSROOM_ORG_NAME, data: normalizedJson });
+  try {
+    repos = await fetchAllRepos(apolloFetch)
+    const normalizedJson = normalizeRepos(repos)
+  
+    res.render('index/index', { CLASSROOM_ORG_NAME, data: normalizedJson });
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function normalizeRepos(originalData) {
@@ -68,6 +74,7 @@ async function fetchAllRepos(apolloFetch) {
 
   while(hasNextPage) {
     const nextAssignments = await fetchNextAssignments(apolloFetch, endCursor)
+    console.log(apolloFetch)
     allRepos.push(...nextAssignments.data.organization.repositories.edges)
     hasNextPage = nextAssignments.data.organization.repositories.pageInfo.hasNextPage
     endCursor = nextAssignments.data.organization.repositories.pageInfo.endCursor

@@ -9,6 +9,7 @@
       <thead>
         <tr>
           <td></td>
+          <td>GitHub Username</td>
           <% for (let repo of data[0].repos) { %>
               <td>
                 <%= repo.name.substring(repo.name.lastIndexOf('-'), 0) %>
@@ -17,12 +18,14 @@
         </tr>
       </thead>
       <tbody>
+        <% let i = 1 %>
         <% for (let user of data) { %>
           <tr>
+            <td><%= i++ %></td>
             <td><%= user.login %></td>
             <% for (let repo of user.repos) { %>
               <td>
-                <img src="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>.svg?branch=master"><br/>
+                <a target="_blank" href="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>"><img src="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>.svg?branch=master"></a><br/>
                 <small><a href="<%= repo.url %>"><%= repo.name %></a></small>
               </td>
             <% }; %>
