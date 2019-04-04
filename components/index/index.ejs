@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="en">
 <head>
     <% include ../partials/header %>
@@ -10,27 +10,28 @@
         <tr>
           <td></td>
           <td>GitHub Username</td>
-          <% for (let repo of data[0].repos) { %>
+          <% for (let assignment of assignmentNames) { %>
               <td>
-                <%= repo.name.substring(repo.name.lastIndexOf('-'), 0) %>
+                <%= assignment %>
               </td>
             <% }; %>
         </tr>
       </thead>
       <tbody>
-        <% let i = 1 %>
-        <% for (let user of data) { %>
+        <% let i = 0 %>
+        <% data.forEach(d => { %>
           <tr>
-            <td><%= i++ %></td>
-            <td><%= user.login %></td>
-            <% for (let repo of user.repos) { %>
+            <td><%= i++ + 1 %></td>
+            <td><%= d.user.login %></td>
+            <% d.assignments.forEach(asgmt => { %>
               <td>
-                <a target="_blank" href="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>"><img src="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= repo.name %>.svg?branch=master"></a><br/>
-                <small><a href="<%= repo.url %>"><%= repo.name %></a></small>
+                <a target="_blank" href="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= asgmt.name %>"><img src="https://travis-ci.org/<%= CLASSROOM_ORG_NAME %>/<%= asgmt.name %>.svg?branch=master"></a><br/>
+                <small><a href="<%= asgmt.url %>"><%= asgmt.name %></a></small>
+                <small><a href="https://hft-stuttgart-ipr.github.io/<%= asgmt.name %>">Public URL</a></small>
               </td>
-            <% }; %>
+            <% }); %>
           </tr>
-        <% }; %>
+        <% }); %>
       </tbody>
     </table>
   </div>
