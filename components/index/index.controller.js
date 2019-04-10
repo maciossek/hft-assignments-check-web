@@ -64,12 +64,12 @@ function normalizeRepos(originalData) {
           url: item.node.url
         };
 
-        assignmentNames.indexOf("item.node.name") >=
-        assignmentNames.indexOf(
-          storedUser.assignments[storedUser.assignments.length - 1].name
-        )
-          ? storedUser.assignments.push(newAssignment)
-          : storedUser.assignments.unshift(newAssignment);
+        const shortNameCurrentAssignment = newAssignment.name.substr(0, newAssignment.name.lastIndexOf('-'))
+        const assignmentPos = assignmentNames.indexOf(shortNameCurrentAssignment)
+
+        storedUser.assignments.length > assignmentPos && assignmentPos !== -1
+          ? storedUser.assignments.splice(assignmentPos, 0, newAssignment)
+          : storedUser.assignments.push(newAssignment)
       }
     });
   return Array.from(parsedData.values());
